@@ -30,9 +30,37 @@ public class raycastForward : MonoBehaviour {
 				if (hit.distance < distance)
 				{
 					Debug.Log(hit.collider.gameObject.name);
+					if (hit.collider.gameObject.name == "Mirror")
+					{
+						Transform target = hit.collider.gameObject.transform;
+						Rotate(target);
+					}
+					
 				}
 			}
 		}
 	}
+
+	void Rotate(Transform _target)
+	{
+		Vector3 angles = new Vector3(0f, 0f, 0f);
+
+		if (Input.GetButtonDown("RotateLeft"))
+		{
+			angles.y = 45;
+		}
+		else if (Input.GetButtonDown("RotateRight"))
+		{
+			angles.y = -45;
+		}
+		else
+		{
+			return;
+		}
+
+		_target.Rotate(angles);
+
+	}
+
 	#endregion
 }
