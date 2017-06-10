@@ -9,7 +9,8 @@ using UnityEngine;
 public class raycastForward : MonoBehaviour {
 
 	#region Variables
-	public float distance;
+	[SerializeField]
+	private float distance;
 	#endregion
 
 	#region Start/Update Methods
