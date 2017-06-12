@@ -11,6 +11,9 @@ public class raycastMirror : MonoBehaviour {
 	#region Variables
 	[SerializeField]
 	private float distance;
+	[SerializeField]
+	private float laserTime = 5f;
+	public LineRenderer laser;
 	#endregion
 
 	#region Start/Update Methods
@@ -29,13 +32,21 @@ public class raycastMirror : MonoBehaviour {
 			{
 				if (hit.distance < distance)
 				{
-					Debug.Log(hit.collider.gameObject.name);
+					//Debug.Log(hit.collider.gameObject.name);
 					if (hit.collider.gameObject.name == "Mirror")
 					{
 						Transform target = hit.collider.gameObject.transform;
 						Rotate(target);
 					}
-					
+					if (hit.collider.gameObject.name == "Laser Emitter")
+					{
+						if (Input.GetButtonDown("Fire1"))
+						{
+							StartCoroutine(FireLaser());
+						}
+					}
+
+
 				}
 			}
 		}
@@ -63,4 +74,12 @@ public class raycastMirror : MonoBehaviour {
 	}
 
 	#endregion
+
+	IEnumerator FireLaser ()
+	{
+		laser.enabled = true;
+		yield return new WaitForSeconds(laserTime);
+		laser.enabled = false;
+		
+	}
 }
