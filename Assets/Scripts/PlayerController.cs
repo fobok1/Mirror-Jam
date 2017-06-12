@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 
     private PlayerMotor motor;
 
+
     private void Start()
     {
         motor = GetComponent<PlayerMotor>();
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour {
 
         // Apply
 
-        motor.Tilt(_tilt);
+        motor.Tilt(_tilt, _yRot * (lookSensitivity / 2));
     }
 
     
