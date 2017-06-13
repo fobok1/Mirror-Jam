@@ -79,6 +79,8 @@ public class RaycastReflection : MonoBehaviour
 
 					//set the position of the next vertex at the line renderer to be the same as the hit point  
 					lineRenderer.SetPosition(i + 1, hit.point);
+
+					
 				}
 			}
 			else // the ray has reflected at least once  
@@ -100,10 +102,23 @@ public class RaycastReflection : MonoBehaviour
 					// Debug.Log("Object name: " + hit.transform.name);
 
 					//add a new vertex to the line renderer  
+					
+
 					lineRenderer.positionCount = ++numVertex;
+					//if (hit.collider.tag != "Mirror")
+					//{
+					//	break;
+					//}
+
 					//set the position of the next vertex at the line renderer to be the same as the hit point  
 					lineRenderer.SetPosition(i + 1, hit.point);
 				}
+			}
+
+			if (hit.collider.tag != "Mirror")
+			{
+				//i = nReflections;
+				break;
 			}
 		}
 	}

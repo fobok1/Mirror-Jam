@@ -14,7 +14,7 @@ public class PlayerMotor : MonoBehaviour {
     private Camera cam;
     private Vector3 velocity = Vector3.zero;
     private Vector3 rotation = Vector3.zero;
-    private Vector3 tilt = Vector3.zero;
+    // private Vector3 tilt = Vector3.zero;
 
 	[SerializeField]
 	private float maxRotation = 85f;
@@ -71,7 +71,7 @@ public class PlayerMotor : MonoBehaviour {
 
     public void Tilt(Vector3 _camTilt, float _yRot)
     {
-        tilt = _camTilt;
+        // tilt = _camTilt;
 		yRot = _yRot;
     }
 
