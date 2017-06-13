@@ -200,7 +200,6 @@
     <Compile Include="Assets\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\FullTiltBoogie\Helpers\readme.txt" />
     <None Include="Assets\Game Jam Template\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Game Jam Template\GameJamTemplateReadMe.txt" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
