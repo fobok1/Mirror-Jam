@@ -23,7 +23,7 @@ public class RaycastReflection : MonoBehaviour
 
 	//the number of points at the line renderer  
 	private int numPoints;
-	private int pointCount;
+	//private int pointCount;
 
 	void Awake()
 	{
@@ -51,17 +51,16 @@ public class RaycastReflection : MonoBehaviour
 		//Set the first point of the line at the current attached game object position  
 		lineRenderer.SetPosition(0, goTransform.position);
 
-		lineRenderer.loop = false;
-
+		
 		for (int i = 0; i <= nReflections; i++)
 		{
 
 			//If the ray hasn't reflected yet  
 
-			if (Physics.Raycast(ray.origin, ray.direction, out hit, 100) && hit.collider.tag != "Mirror")
-			{
-				break;
-			}
+			//if (Physics.Raycast(ray.origin, ray.direction, out hit, 100) && hit.collider.tag != "Mirror")
+			//{
+			//	break;
+			//}
 
 			if (i == 0)
 			{
@@ -123,6 +122,11 @@ public class RaycastReflection : MonoBehaviour
 					
 				}
 			}
+
+			//if (hit.collider.tag != "Mirror")
+			//{
+			//	break;
+			//}
 
 			
 		}

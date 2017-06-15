@@ -148,7 +148,6 @@
     <Compile Include="Assets\_myAssets\Scripts\PlayerMotor.cs" />
     <Compile Include="Assets\_myAssets\Scripts\RaycastReflection.cs" />
     <Compile Include="Assets\_myAssets\Scripts\RotateMirror.cs" />
-    <Compile Include="Assets\_myAssets\Scripts\raycastLaser.cs" />
     <Compile Include="Assets\_myAssets\Scripts\raycastMirror.cs" />
   </ItemGroup>
   <ItemGroup>
