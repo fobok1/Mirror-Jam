@@ -40,7 +40,7 @@ public class raycastMirror : MonoBehaviour {
 					}
 					if (hit.collider.gameObject.name == "Laser Emitter")
 					{
-						if (Input.GetButtonDown("Fire1"))
+						if (Input.GetButtonDown("Activate"))
 						{
 							StartCoroutine(FireLaser());
 						}

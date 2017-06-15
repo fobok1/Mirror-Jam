@@ -51,19 +51,31 @@ public class RaycastReflection : MonoBehaviour
 		//Set the first point of the line at the current attached game object position  
 		lineRenderer.SetPosition(0, goTransform.position);
 
+		lineRenderer.loop = false;
+
 		for (int i = 0; i <= nReflections; i++)
 		{
+
 			//If the ray hasn't reflected yet  
+
+			if (Physics.Raycast(ray.origin, ray.direction, out hit, 100) && hit.collider.tag != "Mirror")
+			{
+				break;
+			}
+
 			if (i == 0)
 			{
+				
+
 				//Check if the ray has hit something  
 				if (Physics.Raycast(ray.origin, ray.direction, out hit, 100))//cast the ray 100 units at the specified direction  
 				{
 					//the reflection direction is the reflection of the current ray direction flipped at the hit normal  
 					direction = Vector3.Reflect(ray.direction, hit.normal);
 					//cast the reflected ray, using the hit point as the origin and the reflected direction as the direction  
-					ray = new Ray(hit.point, direction);
 
+					ray = new Ray(hit.point, direction);
+					
 					//Draw the normal - can only be seen at the Scene tab, for debugging purposes  
 					Debug.DrawRay(hit.point, hit.normal * 3, Color.blue);
 					//represent the ray using a line that can only be viewed at the scene tab  
@@ -94,7 +106,6 @@ public class RaycastReflection : MonoBehaviour
 					direction = Vector3.Reflect(direction, hit.normal);
 					//cast the reflected ray, using the hit point as the origin and the reflected direction as the direction  
 					ray = new Ray(hit.point, direction);
-
 					//Draw the normal - can only be seen at the Scene tab, for debugging purposes  
 					Debug.DrawRay(hit.point, hit.normal * 3, Color.blue);
 					//represent the ray using a line that can only be viewed at the scene tab  
@@ -104,19 +115,16 @@ public class RaycastReflection : MonoBehaviour
 					// Debug.Log("Object name: " + hit.transform.name);
 
 					//add a new vertex to the line renderer  
-					
 
 					lineRenderer.positionCount = ++numPoints;
-					
-					//set the position of the next vertex at the line renderer to be the same as the hit point  
+
+						//set the position of the next vertex at the line renderer to be the same as the hit point  
 					lineRenderer.SetPosition(i + 1, hit.point);
+					
 				}
 			}
 
-			if (hit.collider.tag != "Mirror")
-			{
-				break;
-			}
+			
 		}
 	}
 
