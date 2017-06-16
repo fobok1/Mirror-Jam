@@ -39,6 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerRay: {fileID: 0}
   pauseMenu: {fileID: 0}
 --- !u!224 &224530526067689140
 RectTransform:

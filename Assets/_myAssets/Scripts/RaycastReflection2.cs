@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class RaycastReflection2 : MonoBehaviour
 {
+	public bool hasFired = false;
 
 	public GameMaster gm;
 
@@ -92,7 +93,11 @@ public class RaycastReflection2 : MonoBehaviour
 
 				if (hit.collider.tag != "Mirror")
 				{
-					gm.hitCheck(hit.collider.tag);
+					if (!hasFired)
+					{
+						gm.hitCheck(hit.collider.tag);
+						hasFired = true;
+					}					
 					break;
 				}
 

@@ -77,3 +77,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitText: {fileID: 0}
   player: {fileID: 0}
+  playerRay: {fileID: 0}

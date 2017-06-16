@@ -13,6 +13,7 @@ public class raycastMirror : MonoBehaviour {
 	private float distance;
 	[SerializeField]
 	private float laserTime = 5f;
+	public RaycastReflection2 laserScript;
 	public LineRenderer laser;
 	#endregion
 
@@ -78,8 +79,12 @@ public class raycastMirror : MonoBehaviour {
 	IEnumerator FireLaser ()
 	{
 		laser.enabled = true;
+		laserScript.enabled = true;		
 		yield return new WaitForSeconds(laserTime);
 		laser.enabled = false;
-		
+		laserScript.enabled = false;
+		laserScript.hasFired = false;
+
+
 	}
 }
