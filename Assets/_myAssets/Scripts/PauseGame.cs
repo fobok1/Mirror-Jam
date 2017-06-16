@@ -12,6 +12,8 @@ public class PauseGame : MonoBehaviour {
 	[SerializeField]
 	private PlayerController player;
 	[SerializeField]
+	private raycastMirror playerRay;
+	[SerializeField]
 	private GameObject pauseMenu;
 	#endregion
 
@@ -32,12 +34,14 @@ public class PauseGame : MonoBehaviour {
 				pauseMenu.SetActive(false);
 				Time.timeScale = 1;
 				player.enabled = true;
+				playerRay.enabled = true;
 			}
 			else
 			{
 				pauseMenu.SetActive(true);
 				Time.timeScale = 0;
 				player.enabled = false;
+				playerRay.enabled = false;
 			}
 
 		}

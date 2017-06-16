@@ -25,6 +25,10 @@ public class RaycastReflection : MonoBehaviour
 	private int numPoints;
 	//private int pointCount;
 
+	//max length
+
+	public float maxLength = 100f;
+
 	void Awake()
 	{
 		//get the attached Transform component  
@@ -44,10 +48,11 @@ public class RaycastReflection : MonoBehaviour
 		Debug.DrawRay(goTransform.position, goTransform.forward * 100, Color.magenta);
 
 		//set the number of points to be the same as the number of reflections  
-		numPoints = nReflections;
-		
+		//numPoints = nReflections;
+		float remainingLength = maxLength;
+
 		//make the lineRenderer have that number of points  
-		lineRenderer.positionCount = numPoints;
+		lineRenderer.positionCount = 1;
 		//Set the first point of the line at the current attached game object position  
 		lineRenderer.SetPosition(0, goTransform.position);
 
@@ -62,66 +67,52 @@ public class RaycastReflection : MonoBehaviour
 			//	break;
 			//}
 
-			if (i == 0)
-			{
-				
+			
 
 				//Check if the ray has hit something  
-				if (Physics.Raycast(ray.origin, ray.direction, out hit, 100))//cast the ray 100 units at the specified direction  
-				{
-					//the reflection direction is the reflection of the current ray direction flipped at the hit normal  
-					direction = Vector3.Reflect(ray.direction, hit.normal);
-					//cast the reflected ray, using the hit point as the origin and the reflected direction as the direction  
+                if (Physics.Raycast(ray.origin, ray.direction, out hit, remainingLength))//cast the ray 100 units at the specified direction  
+                {
+                    //the reflection direction is the reflection of the current ray direction flipped at the hit normal  
+                    //direction = Vector3.Reflect(ray.direction, hit.normal);
+                    //cast the reflected ray, using the hit point as the origin and the reflected direction as the direction  
+                    lineRenderer.positionCount += 1;
 
-					ray = new Ray(hit.point, direction);
-					
-					//Draw the normal - can only be seen at the Scene tab, for debugging purposes  
-					Debug.DrawRay(hit.point, hit.normal * 3, Color.blue);
-					//represent the ray using a line that can only be viewed at the scene tab  
-					Debug.DrawRay(hit.point, direction * 100, Color.magenta);
+                    lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
 
-					//Print the name of the object the cast ray has hit, at the console  
-					//Debug.Log("Object name: " + hit.transform.name);
+                    remainingLength -= Vector3.Distance(ray.origin, hit.point);
 
-					//if the number of reflections is set to 1  
-					if (nReflections == 1)
+                    ray = new Ray(hit.point, direction);
+
+                    if (hit.collider.tag != "Mirror")
 					{
-						//add a new vertex to the line renderer  
-						lineRenderer.positionCount = ++numPoints;
+					break;
 					}
-
-					//set the position of the next vertex at the line renderer to be the same as the hit point  
-					lineRenderer.SetPosition(i + 1, hit.point);
-
-					
+						
 				}
-			}
-			else // the ray has reflected at least once  
-			{
-				//Check if the ray has hit something  
-				if (Physics.Raycast(ray.origin, ray.direction, out hit, 100))//cast the ray 100 units at the specified direction  
+				else
 				{
-					//the refletion direction is the reflection of the ray's direction at the hit normal  
-					direction = Vector3.Reflect(direction, hit.normal);
-					//cast the reflected ray, using the hit point as the origin and the reflected direction as the direction  
-					ray = new Ray(hit.point, direction);
-					//Draw the normal - can only be seen at the Scene tab, for debugging purposes  
-					Debug.DrawRay(hit.point, hit.normal * 3, Color.blue);
-					//represent the ray using a line that can only be viewed at the scene tab  
-					Debug.DrawRay(hit.point, direction * 100, Color.magenta);
-
-					//Print the name of the object the cast ray has hit, at the console  
-					// Debug.Log("Object name: " + hit.transform.name);
-
-					//add a new vertex to the line renderer  
-
-					lineRenderer.positionCount = ++numPoints;
-
-						//set the position of the next vertex at the line renderer to be the same as the hit point  
-					lineRenderer.SetPosition(i + 1, hit.point);
-					
+					lineRenderer.positionCount += 1;
+					lineRenderer.SetPosition(lineRenderer.positionCount - 1, ray.origin + ray.direction * remainingLength);
+					break;
 				}
-			}
+
+				//Draw the normal - can only be seen at the Scene tab, for debugging purposes  
+				//Debug.DrawRay(hit.point, hit.normal * 3, Color.blue);
+				//represent the ray using a line that can only be viewed at the scene tab  
+				//Debug.DrawRay(hit.point, direction * 100, Color.magenta);
+
+				//Print the name of the object the cast ray has hit, at the console  
+				//Debug.Log("Object name: " + hit.transform.name);
+
+				//if the number of reflections is set to 1  
+
+
+
+				//set the position of the next vertex at the line renderer to be the same as the hit point  
+
+
+
+			
 
 			//if (hit.collider.tag != "Mirror")
 			//{
