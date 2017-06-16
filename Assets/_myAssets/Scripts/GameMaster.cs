@@ -14,6 +14,7 @@ public class GameMaster : MonoBehaviour {
 	public PlayerController player;
 	public raycastMirror playerRay;
 	public Slider charge;
+	public GameObject loseText;
 	#endregion
 
 	#region Methods
@@ -37,7 +38,10 @@ public class GameMaster : MonoBehaviour {
 			if (charge.value <= 0)
 			{
 				Debug.Log("Game over.");
-				// End game screen.
+
+				player.enabled = false;
+				playerRay.enabled = false;
+				loseText.SetActive(true);
 			}
 		}
 	}

@@ -27,4 +27,9 @@ public class NextLevel : MonoBehaviour {
 	{
 		SceneManager.LoadScene("MainMenu");
 	}
+
+	public void ReloadLevel()
+	{
+		SceneManager.LoadScene(levelIndex);
+	}
 }
