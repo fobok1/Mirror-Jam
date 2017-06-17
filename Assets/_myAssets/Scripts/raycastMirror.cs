@@ -47,6 +47,7 @@ public class raycastMirror : MonoBehaviour {
 					if (hit.collider.tag == "Mirror")
 					{
 						panel.SetActive(true);
+						laserTooltip.SetActive(false);
 						mirrorTooltip.SetActive(true);
 						Transform target = hit.collider.gameObject.transform;
 						Rotate(target);
@@ -54,6 +55,7 @@ public class raycastMirror : MonoBehaviour {
 					else if (hit.collider.tag == "Laser")
 					{
 						panel.SetActive(true);
+						mirrorTooltip.SetActive(false);
 						laserTooltip.SetActive(true);
 						if (Input.GetButtonDown("Activate"))
 						{
@@ -63,6 +65,7 @@ public class raycastMirror : MonoBehaviour {
 					else if (hit.collider.tag == "laserTooltip")
 					{
 						panel.SetActive(true);
+						mirrorTooltip.SetActive(false);
 						laserTooltip.SetActive(true);
 					}
 					else
@@ -75,6 +78,13 @@ public class raycastMirror : MonoBehaviour {
 
 				}
 			}
+			
+		}
+		else
+		{
+			laserTooltip.SetActive(false);
+			mirrorTooltip.SetActive(false);
+			panel.SetActive(false);
 		}
 	}
 
