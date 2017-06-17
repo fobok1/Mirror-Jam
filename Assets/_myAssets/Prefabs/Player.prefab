@@ -254,10 +254,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abfb9f1be174d9f4a924290e22a67b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 10
+  distance: 6
   laserTime: 5
   laserScript: {fileID: 0}
   laser: {fileID: 0}
+  mirrorTooltip: {fileID: 0}
+  laserTooltip: {fileID: 0}
+  panel: {fileID: 0}
+  cam: {fileID: 0}
 --- !u!114 &114288232981377080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -311,6 +315,10 @@ MonoBehaviour:
   laserTime: 5
   laserScript: {fileID: 0}
   laser: {fileID: 0}
+  mirrorTooltip: {fileID: 0}
+  laserTooltip: {fileID: 0}
+  panel: {fileID: 0}
+  cam: {fileID: 0}
 --- !u!124 &124287184089800518
 Behaviour:
   m_ObjectHideFlags: 1
