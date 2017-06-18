@@ -21,7 +21,8 @@ public class PauseGame : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	// Update is called once per frame
@@ -35,6 +36,8 @@ public class PauseGame : MonoBehaviour {
 				Time.timeScale = 1;
 				player.enabled = true;
 				playerRay.enabled = true;
+				Cursor.visible = false;
+				Cursor.lockState = CursorLockMode.None;
 			}
 			else
 			{
@@ -42,6 +45,8 @@ public class PauseGame : MonoBehaviour {
 				Time.timeScale = 0;
 				player.enabled = false;
 				playerRay.enabled = false;
+				Cursor.visible = true;
+				Cursor.lockState = CursorLockMode.None;
 			}
 
 		}

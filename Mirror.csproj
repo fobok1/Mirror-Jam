@@ -99,6 +99,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AudioManager.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -176,8 +177,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\_myAssets\Scripts\Clip.cs" />
     <Compile Include="Assets\_myAssets\Scripts\ExitGame.cs" />
     <Compile Include="Assets\_myAssets\Scripts\GameMaster.cs" />
+    <Compile Include="Assets\_myAssets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\_myAssets\Scripts\NextLevel.cs" />
     <Compile Include="Assets\_myAssets\Scripts\PauseGame.cs" />
     <Compile Include="Assets\_myAssets\Scripts\PlayerController.cs" />
@@ -187,6 +190,7 @@
     <Compile Include="Assets\_myAssets\Scripts\raycastMirror.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Dark Future\ReadMe.txt" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />

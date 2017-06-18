@@ -124,17 +124,20 @@ public class raycastMirror : MonoBehaviour {
 
 	IEnumerator FireLaser ()
 	{
+		AudioManager manager = FindObjectOfType<AudioManager>();
 		Material[] mats = button.materials;
 		laser.enabled = true;
 		laserScript.enabled = true;
 		mats[3] = red;
 		button.materials = mats;
+		manager.Play("Laser");
 		yield return new WaitForSeconds(laserTime);
 		laser.enabled = false;
 		laserScript.enabled = false;
 		laserScript.hasFired = false;
 		mats[3] = green;
 		button.materials = mats;
+		manager.Stop("Laser");
 
 	}
 }

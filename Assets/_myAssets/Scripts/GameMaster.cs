@@ -33,6 +33,8 @@ public class GameMaster : MonoBehaviour {
 			player.enabled = false;
 			playerRay.enabled = false;
 			hitText.SetActive(true);
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
 		}
 		else
 		{
@@ -46,6 +48,8 @@ public class GameMaster : MonoBehaviour {
 					player.enabled = false;
 					playerRay.enabled = false;
 					loseText.SetActive(true);
+					Cursor.visible = true;
+					Cursor.lockState = CursorLockMode.None;
 				}
 			}
 		}
