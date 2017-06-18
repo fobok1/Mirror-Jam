@@ -19,6 +19,9 @@ public class raycastMirror : MonoBehaviour {
 	public GameObject laserTooltip;
 	public GameObject panel;
 	public Camera cam;
+	public MeshRenderer button;
+	public Material green;
+	public Material red;
 	#endregion
 
 	#region Start/Update Methods
@@ -45,6 +48,14 @@ public class raycastMirror : MonoBehaviour {
 				{
 					//Debug.Log(hit.collider.gameObject.name);
 					if (hit.collider.tag == "Mirror")
+					{
+						panel.SetActive(true);
+						laserTooltip.SetActive(false);
+						mirrorTooltip.SetActive(true);
+						Transform target = hit.collider.gameObject.transform.parent.gameObject.transform;
+						Rotate(target);
+					}
+					else if (hit.collider.tag == "MirrorTooltip")
 					{
 						panel.SetActive(true);
 						laserTooltip.SetActive(false);
@@ -113,13 +124,17 @@ public class raycastMirror : MonoBehaviour {
 
 	IEnumerator FireLaser ()
 	{
+		Material[] mats = button.materials;
 		laser.enabled = true;
-		laserScript.enabled = true;		
+		laserScript.enabled = true;
+		mats[3] = red;
+		button.materials = mats;
 		yield return new WaitForSeconds(laserTime);
 		laser.enabled = false;
 		laserScript.enabled = false;
 		laserScript.hasFired = false;
-
+		mats[3] = green;
+		button.materials = mats;
 
 	}
 }

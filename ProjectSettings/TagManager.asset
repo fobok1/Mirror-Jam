@@ -8,6 +8,7 @@ TagManager:
   - Target
   - Laser
   - laserTooltip
+  - MirrorTooltip
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,7 @@ public class GameMaster : MonoBehaviour {
 	public raycastMirror playerRay;
 	public Slider charge;
 	public GameObject loseText;
+	public RaycastReflection2 laserScript;
 	#endregion
 
 	#region Methods
@@ -23,6 +24,7 @@ public class GameMaster : MonoBehaviour {
 	{
 		charge.value = 3;
 	}
+
 
 	public void hitCheck(string tag)
 	{
@@ -34,14 +36,17 @@ public class GameMaster : MonoBehaviour {
 		}
 		else
 		{
-			charge.value--;
-			if (charge.value <= 0)
+			if (!laserScript.hasFired)
 			{
-				Debug.Log("Game over.");
+				charge.value--;
+				if (charge.value <= 0)
+				{
+					Debug.Log("Game over.");
 
-				player.enabled = false;
-				playerRay.enabled = false;
-				loseText.SetActive(true);
+					player.enabled = false;
+					playerRay.enabled = false;
+					loseText.SetActive(true);
+				}
 			}
 		}
 	}
