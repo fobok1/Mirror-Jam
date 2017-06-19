@@ -10,6 +10,8 @@ public class PauseGame : MonoBehaviour {
 
 	#region Variables
 	[SerializeField]
+	private GameObject menuPanel;
+	[SerializeField]
 	private PlayerController player;
 	[SerializeField]
 	private raycastMirror playerRay;
@@ -17,7 +19,11 @@ public class PauseGame : MonoBehaviour {
 	private GameObject pauseMenu;
 	[SerializeField]
 	private GameObject welcome;
+	[SerializeField]
+	private GameObject optionsMenu;
+	private bool optionsShow = false;
 	#endregion
+
 
 	#region Start/Update Methods
 	// Use this for initialization
@@ -38,6 +44,7 @@ public class PauseGame : MonoBehaviour {
 		{
 			if (pauseMenu.activeSelf)
 			{
+				menuPanel.SetActive(false);
 				pauseMenu.SetActive(false);
 				Time.timeScale = 1;
 				player.enabled = true;
@@ -47,6 +54,8 @@ public class PauseGame : MonoBehaviour {
 			}
 			else
 			{
+				optionsMenu.SetActive(false);
+				menuPanel.SetActive(true);
 				pauseMenu.SetActive(true);
 				Time.timeScale = 0;
 				player.enabled = false;
@@ -66,6 +75,18 @@ public class PauseGame : MonoBehaviour {
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 		welcome.SetActive(false);
+	}
+
+	public void OpenOptions()
+	{
+		optionsMenu.SetActive(true);
+		menuPanel.SetActive(true);
+		pauseMenu.SetActive(false);
+		Time.timeScale = 0;
+		player.enabled = false;
+		playerRay.enabled = false;
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
 	}
 	#endregion
 }

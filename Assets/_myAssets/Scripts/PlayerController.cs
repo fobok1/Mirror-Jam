@@ -10,10 +10,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    [SerializeField]
-    private float speed = 5f;
-    [SerializeField]
-    private float lookSensitivity = 3f;
+	[Range(1f, 20f)]
+    public float speed = 5f;
+    public float lookSensitivity = 3f;
 
     private PlayerMotor motor;
 
@@ -55,7 +54,10 @@ public class PlayerController : MonoBehaviour {
         motor.Tilt(_tilt, _yRot * (lookSensitivity / 2));
     }
 
-    
+    public void SetSensitivity(float value)
+	{
+		lookSensitivity = value;
+	}
     
 
 }

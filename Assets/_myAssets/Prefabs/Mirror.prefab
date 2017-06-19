@@ -104,8 +104,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1816343315852018}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 13, y: 0.94, z: 0}
+  m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: -5.7, y: 0.94, z: 0}
   m_LocalScale: {x: 0.25, y: 2, z: 1}
   m_Children:
   - {fileID: 4218478784654820}
@@ -114,7 +114,7 @@ Transform:
   - {fileID: 4315867996554194}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!4 &4218478784654820
 Transform:
   m_ObjectHideFlags: 1
@@ -355,7 +355,7 @@ ReflectionProbe:
   m_Mode: 1
   m_RefreshMode: 1
   m_TimeSlicingMode: 0
-  m_Resolution: 128
+  m_Resolution: 1024
   m_UpdateFrequency: 0
   m_BoxSize: {x: 1.6118355, y: 2.34799, z: 1.6992884}
   m_BoxOffset: {x: 0.06696892, y: -0.32600498, z: -0.5341706}
@@ -369,7 +369,7 @@ ReflectionProbe:
     m_Bits: 4294967295
   m_IntensityMultiplier: 1
   m_BlendDistance: 1
-  m_HDR: 0
+  m_HDR: 1
   m_BoxProjection: 1
   m_RenderDynamicObjects: 0
   m_UseOcclusionCulling: 1
