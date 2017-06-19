@@ -89,4 +89,16 @@ public class PauseGame : MonoBehaviour {
 		Cursor.lockState = CursorLockMode.None;
 	}
 	#endregion
+
+	public void CloseOptions()
+	{
+		optionsMenu.SetActive(false);
+		menuPanel.SetActive(true);
+		pauseMenu.SetActive(true);
+		Time.timeScale = 0;
+		player.enabled = false;
+		playerRay.enabled = false;
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
+	}
 }
