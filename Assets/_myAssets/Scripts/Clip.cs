@@ -5,7 +5,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Audio;
+using UnityEngine.Audio;
 
 [System.Serializable]
 public class Clip {

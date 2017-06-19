@@ -47,6 +47,10 @@ public class RaycastReflection2 : MonoBehaviour
 
 	//private int pointCount;
 
+	public GameObject sparks;
+	public Light sparksLight;
+
+
 	void Awake()
 
 	{
@@ -60,10 +64,14 @@ public class RaycastReflection2 : MonoBehaviour
 		lineRenderer = this.GetComponent<LineRenderer>();
 		//lineRenderer.SetPosition(0, new Vector3(999f, 999f, 999f));
 
+		//sparks = FindObjectOfType<ParticleSystem>().gameObject;
+		//sparksLight = FindObjectOfType<Light>();
 
 		lineRenderer.positionCount = 1;
 
 		lineRenderer.SetPosition(0, goTransform.position);
+
+		
 
 	}
 
@@ -99,7 +107,9 @@ public class RaycastReflection2 : MonoBehaviour
 
 				if (hit.collider.tag != "Mirror")
 				{
-					
+					sparks.transform.position = hit.point;
+					sparks.SetActive(true);
+					sparksLight.gameObject.SetActive(true);
 					gm.hitCheck(hit.collider.tag);
 					hasFired = true;
 					break;

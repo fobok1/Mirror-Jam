@@ -21,6 +21,7 @@ public class raycastMirror : MonoBehaviour {
 	public MeshRenderer button;
 	public Material green;
 	public Material red;
+	public GameObject fireLight;
 	#endregion
 
 	#region Start/Update Methods
@@ -148,6 +149,7 @@ public class raycastMirror : MonoBehaviour {
 		mats[3] = red;
 		button.materials = mats;
 		manager.Play("Laser");
+		fireLight.SetActive(true);
 		yield return new WaitForSeconds(laserTime);
 		laser.enabled = false;
 		laserScript.enabled = false;
@@ -155,6 +157,9 @@ public class raycastMirror : MonoBehaviour {
 		mats[3] = green;
 		button.materials = mats;
 		manager.Stop("Laser");
+		laserScript.sparks.SetActive(false);
+		laserScript.sparksLight.gameObject.SetActive(false);
+		fireLight.SetActive(false);
 
 	}
 }

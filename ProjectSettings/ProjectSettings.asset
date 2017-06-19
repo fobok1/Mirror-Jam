@@ -47,7 +47,7 @@ PlayerSettings:
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 1
+  m_ActiveColorSpace: 0
   m_MTRendering: 1
   m_MobileMTRendering: 0
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
@@ -533,7 +533,53 @@ PlayerSettings:
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628,
     a: 1}
   metroSplashScreenUseBackgroundColor: 0
-  platformCapabilities: {}
+  platformCapabilities:
+    WindowsStoreApps:
+      AccountRead: False
+      AccountWrite: False
+      AlarmGet: False
+      AlarmSet: False
+      AppManagerLaunch: False
+      Bluetooth: False
+      CalendarRead: False
+      CalendarWrite: False
+      Call: False
+      CallHistoryRead: False
+      CallHistoryWrite: False
+      Camera: False
+      ContactRead: False
+      ContactWrite: False
+      ContentWrite: False
+      DataSharing: False
+      Display: False
+      Download: False
+      Email: False
+      ExternalStorage: False
+      ExternalStorageAppData: False
+      Haptic: False
+      Internet: False
+      KeyManager: False
+      LED: False
+      Location: False
+      MediaStorage: False
+      MessageRead: False
+      MessageWrite: False
+      NFC: False
+      NFCCardEmulation: False
+      NetworkGet: False
+      NetworkProfile: False
+      NetworkSet: False
+      Notification: False
+      PackageManagerInfo: True
+      Power: False
+      Push: False
+      Recorder: False
+      Shortcut: False
+      SystemSettings: False
+      Telephony: False
+      VolumeSet: False
+      WifiDirect: False
+      WindowPrioritySet: False
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
