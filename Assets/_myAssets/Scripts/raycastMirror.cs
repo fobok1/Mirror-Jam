@@ -48,25 +48,34 @@ public class raycastMirror : MonoBehaviour {
 					//Debug.Log(hit.collider.gameObject.name);
 					if (hit.collider.tag == "Mirror")
 					{
-						panel.SetActive(true);
-						laserTooltip.SetActive(false);
-						mirrorTooltip.SetActive(true);
+						if (panel != null)
+						{
+							panel.SetActive(true);
+							laserTooltip.SetActive(false);
+							mirrorTooltip.SetActive(true);
+						}
 						Transform target = hit.collider.gameObject.transform.parent.gameObject.transform;
 						Rotate(target);
 					}
 					else if (hit.collider.tag == "MirrorTooltip")
 					{
-						panel.SetActive(true);
-						laserTooltip.SetActive(false);
-						mirrorTooltip.SetActive(true);
+						if (panel != null)
+						{
+							panel.SetActive(true);
+							laserTooltip.SetActive(false);
+							mirrorTooltip.SetActive(true);
+						}
 						Transform target = hit.collider.gameObject.transform;
 						Rotate(target);
 					}
 					else if (hit.collider.tag == "Laser")
 					{
-						panel.SetActive(true);
-						mirrorTooltip.SetActive(false);
-						laserTooltip.SetActive(true);
+						if (panel != null)
+						{
+							panel.SetActive(true);
+							mirrorTooltip.SetActive(false);
+							laserTooltip.SetActive(true);
+						}
 						if (Input.GetButtonDown("Activate"))
 						{
 							StartCoroutine(FireLaser());
@@ -74,15 +83,21 @@ public class raycastMirror : MonoBehaviour {
 					}
 					else if (hit.collider.tag == "laserTooltip")
 					{
-						panel.SetActive(true);
-						mirrorTooltip.SetActive(false);
-						laserTooltip.SetActive(true);
+						if (panel != null)
+						{
+							panel.SetActive(true);
+							mirrorTooltip.SetActive(false);
+							laserTooltip.SetActive(true);
+						}
 					}
 					else
 					{
-						laserTooltip.SetActive(false);
-						mirrorTooltip.SetActive(false);
-						panel.SetActive(false);
+						if (panel != null)
+						{
+							laserTooltip.SetActive(false);
+							mirrorTooltip.SetActive(false);
+							panel.SetActive(false);
+						}
 					}
 
 
@@ -92,9 +107,12 @@ public class raycastMirror : MonoBehaviour {
 		}
 		else
 		{
-			laserTooltip.SetActive(false);
-			mirrorTooltip.SetActive(false);
-			panel.SetActive(false);
+			if (panel != null)
+			{
+				laserTooltip.SetActive(false);
+				mirrorTooltip.SetActive(false);
+				panel.SetActive(false);
+			}
 		}
 	}
 

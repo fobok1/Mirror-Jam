@@ -58,6 +58,12 @@ public class RaycastReflection2 : MonoBehaviour
 		//get the attached LineRenderer component  
 
 		lineRenderer = this.GetComponent<LineRenderer>();
+		//lineRenderer.SetPosition(0, new Vector3(999f, 999f, 999f));
+
+
+		lineRenderer.positionCount = 1;
+
+		lineRenderer.SetPosition(0, goTransform.position);
 
 	}
 

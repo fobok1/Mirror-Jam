@@ -15,14 +15,20 @@ public class PauseGame : MonoBehaviour {
 	private raycastMirror playerRay;
 	[SerializeField]
 	private GameObject pauseMenu;
+	[SerializeField]
+	private GameObject welcome;
 	#endregion
 
 	#region Start/Update Methods
 	// Use this for initialization
 	void Start ()
 	{
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
+		Time.timeScale = 0;
+		player.enabled = false;
+		playerRay.enabled = false;
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
+		welcome.SetActive(true);
 	}
 
 	// Update is called once per frame
@@ -37,7 +43,7 @@ public class PauseGame : MonoBehaviour {
 				player.enabled = true;
 				playerRay.enabled = true;
 				Cursor.visible = false;
-				Cursor.lockState = CursorLockMode.None;
+				Cursor.lockState = CursorLockMode.Locked;
 			}
 			else
 			{
@@ -50,6 +56,16 @@ public class PauseGame : MonoBehaviour {
 			}
 
 		}
+	}
+
+	public void StartGame()
+	{
+		Time.timeScale = 1;
+		player.enabled = true;
+		playerRay.enabled = true;
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
+		welcome.SetActive(false);
 	}
 	#endregion
 }
