@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_myAssets/Level01.unity
     guid: 620bc1ad6f3b6124dafa261c27a47ceb
+  - enabled: 1
+    path: Assets/_myAssets/WinScene.unity
+    guid: 00000000000000000000000000000000

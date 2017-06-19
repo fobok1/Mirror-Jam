@@ -11,8 +11,7 @@ public class raycastMirror : MonoBehaviour {
 	#region Variables
 	[SerializeField]
 	private float distance;
-	[SerializeField]
-	private float laserTime = 5f;
+	public float laserTime = 5f;
 	public RaycastReflection2 laserScript;
 	public LineRenderer laser;
 	public GameObject mirrorTooltip;

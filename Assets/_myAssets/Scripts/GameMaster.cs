@@ -10,19 +10,22 @@ using UnityEngine.UI;
 public class GameMaster : MonoBehaviour {
 
 	#region Variables
-	public GameObject hitText;
-	public PlayerController player;
-	public raycastMirror playerRay;
-	public Slider charge;
-	public GameObject loseText;
-	public RaycastReflection2 laserScript;
+	public GameObject hitText; // Manually set.
+	public PlayerController player; // Manually set.
+	public raycastMirror playerRay; // Manually set.
+	public Slider charge; // Manually set.
+	public GameObject loseText; // Manually set.
+	public RaycastReflection2 laserScript; // Manually set.
+	private bool hasWon;
 	#endregion
 
 	#region Methods
 
 	private void Start()
 	{
-		charge.value = 3;
+		hasWon = false;
+		charge = FindObjectOfType<Slider>(); // Since manually setting was causing NREs
+		charge.value = 3; // Still causing NREs
 	}
 
 
@@ -35,6 +38,7 @@ public class GameMaster : MonoBehaviour {
 			hitText.SetActive(true);
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
+			hasWon = true;
 		}
 		else
 		{
@@ -43,17 +47,26 @@ public class GameMaster : MonoBehaviour {
 				charge.value--;
 				if (charge.value <= 0)
 				{
-					Debug.Log("Game over.");
-
-					player.enabled = false;
-					playerRay.enabled = false;
-					loseText.SetActive(true);
-					Cursor.visible = true;
-					Cursor.lockState = CursorLockMode.None;
+					StartCoroutine(LoseGame());
 				}
 			}
 		}
 	}
 
+	IEnumerator LoseGame()
+	{
+		raycastMirror ray = FindObjectOfType<raycastMirror>();
+		yield return new WaitForSeconds(ray.laserTime);
+		if (!hasWon)
+		{
+			Debug.Log("Game over.");
+
+			player.enabled = false;
+			playerRay.enabled = false;
+			loseText.SetActive(true);
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
+		}
+	}
 	#endregion
 }

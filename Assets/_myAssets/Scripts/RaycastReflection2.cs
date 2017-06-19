@@ -107,6 +107,9 @@ public class RaycastReflection2 : MonoBehaviour
 
 				lineRenderer.SetPosition(lineRenderer.positionCount - 1, ray.origin + ray.direction * remainingLength);
 
+				gm.hitCheck("None");
+				hasFired = true;
+
 				break;
 
 			}
