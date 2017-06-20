@@ -22,6 +22,7 @@ public class raycastMirror : MonoBehaviour {
 	public Material green;
 	public Material red;
 	public GameObject fireLight;
+	public AudioManager manager;
 	#endregion
 
 	#region Start/Update Methods
@@ -135,6 +136,7 @@ public class raycastMirror : MonoBehaviour {
 		}
 
 		_target.Rotate(angles);
+		manager.Play("Creak");
 
 	}
 
