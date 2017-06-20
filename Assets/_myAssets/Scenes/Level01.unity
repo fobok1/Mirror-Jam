@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -86,7 +86,7 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 112000018, guid: d54b5402afc6d584fb683421dd991b12,
+  m_LightingDataAsset: {fileID: 112000090, guid: d54b5402afc6d584fb683421dd991b12,
     type: 2}
   m_ShadowMaskMode: 2
 --- !u!196 &4
@@ -1107,6 +1107,10 @@ Prefab:
       propertyPath: global
       value: 
       objectReference: {fileID: 1615582121}
+    - target: {fileID: 1492575275291428, guid: d56931d8d6790f74fbb308b40bb8330b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d56931d8d6790f74fbb308b40bb8330b, type: 2}
   m_IsPrefabParent: 0
@@ -2992,14 +2996,6 @@ Prefab:
       propertyPath: m_Name
       value: MazeWall with no Light (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4176457075001934, guid: ca077a46ad92f3d4ba79e6c483d4e88f, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 75.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 4176457075001934, guid: ca077a46ad92f3d4ba79e6c483d4e88f, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 75.00003
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca077a46ad92f3d4ba79e6c483d4e88f, type: 2}
   m_IsPrefabParent: 0
@@ -3292,16 +3288,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114167262308477612, guid: 4aea076d63cf4b44bb7f0f31749f36af,
-        type: 2}
-      propertyPath: clips.Array.data[1].loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114167262308477612, guid: 4aea076d63cf4b44bb7f0f31749f36af,
-        type: 2}
-      propertyPath: clips.Array.data[1].sound
-      value: 
-      objectReference: {fileID: 8300000, guid: 043185e01f7384345966b43696375cc8, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4aea076d63cf4b44bb7f0f31749f36af, type: 2}
   m_IsPrefabParent: 0

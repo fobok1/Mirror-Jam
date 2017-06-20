@@ -34,6 +34,10 @@ public class raycastMirror : MonoBehaviour {
 		cam = GetComponentInChildren<Camera>();
 	}
 
+	/// <summary>
+	/// Detects what the player is looking at.
+	/// </summary>
+
 	void Update ()
 	{
 		RaycastHit hit;
@@ -47,16 +51,15 @@ public class raycastMirror : MonoBehaviour {
 			{
 				if (hit.distance < distance)
 				{
-					//Debug.Log(hit.collider.gameObject.name);
 					if (hit.collider.tag == "Mirror")
 					{
-						if (panel != null)
+						if (panel != null) // in case I take out tooltips in a later level.
 						{
 							panel.SetActive(true);
 							laserTooltip.SetActive(false);
 							mirrorTooltip.SetActive(true);
 						}
-						Transform target = hit.collider.gameObject.transform.parent.gameObject.transform;
+						Transform target = hit.collider.gameObject.transform.parent.gameObject.transform; //mirror object is a parent of overall object
 						Rotate(target);
 					}
 					else if (hit.collider.tag == "MirrorTooltip")
@@ -118,6 +121,10 @@ public class raycastMirror : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Rotates a mirror.
+	/// </summary>
+
 	void Rotate(Transform _target)
 	{
 		Vector3 angles = new Vector3(0f, 0f, 0f);
@@ -141,6 +148,12 @@ public class raycastMirror : MonoBehaviour {
 	}
 
 	#endregion
+
+
+	/// <summary>
+	/// Fires a laser on a 5 second timer, and plays necessary sounds and effects.
+	/// </summary>
+	/// <returns></returns>
 
 	IEnumerator FireLaser ()
 	{
