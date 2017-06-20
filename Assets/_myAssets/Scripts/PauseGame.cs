@@ -21,7 +21,7 @@ public class PauseGame : MonoBehaviour {
 	private GameObject welcome;
 	[SerializeField]
 	private GameObject optionsMenu;
-	private bool optionsShow = false;
+	//private bool optionsShow = false;
 	#endregion
 
 

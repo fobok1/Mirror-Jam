@@ -12,13 +12,16 @@ public class PlayerController : MonoBehaviour {
 
 	[Range(1f, 20f)]
     public float speed = 5f;
-    public float lookSensitivity = 3f;
+	public Globals global;
+	//[Range(1f, 20f)]
+	//public float lookSensitivity = 3f;
 
     private PlayerMotor motor;
 
 
     private void Start()
     {
+		//global = FindObjectOfType<Globals>();
         motor = GetComponent<PlayerMotor>();
     }
 
@@ -37,7 +40,7 @@ public class PlayerController : MonoBehaviour {
 
         float _xRot = Input.GetAxisRaw("Mouse X");
 
-        Vector3 _rotation = new Vector3(0f, _xRot, 0f) * lookSensitivity;
+		Vector3 _rotation = new Vector3(0f, _xRot, 0f) * global.lookSensitivity;
 
         // Apply
 
@@ -47,17 +50,14 @@ public class PlayerController : MonoBehaviour {
 
         float _yRot = Input.GetAxisRaw("Mouse Y");
 
-        Vector3 _tilt = new Vector3(_yRot, 0f, 0f) * lookSensitivity;
+        Vector3 _tilt = new Vector3(_yRot, 0f, 0f) * global.lookSensitivity;
 
         // Apply
 
-        motor.Tilt(_tilt, _yRot * (lookSensitivity / 2));
+        motor.Tilt(_tilt, _yRot * (global.lookSensitivity / 2));
     }
 
-    public void SetSensitivity(float value)
-	{
-		lookSensitivity = value;
-	}
+    
     
 
 }
