@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 124287184089800518}
   - component: {fileID: 92625589091932476}
   - component: {fileID: 81821602476202656}
-  - component: {fileID: 114846508665216430}
+  - component: {fileID: 114367496452573852}
+  - component: {fileID: 114991953912267818}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -90,8 +91,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149705352306206}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.617, y: 1.25, z: -1.92}
+  m_LocalRotation: {x: 0, y: 0.98408735, z: -0, w: -0.17768589}
+  m_LocalPosition: {x: 25.93, y: 1.3, z: 4.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4682138201272118}
@@ -99,7 +100,7 @@ Transform:
   - {fileID: 4805769372724030}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 200.47, z: 0}
 --- !u!4 &4682138201272118
 Transform:
   m_ObjectHideFlags: 1
@@ -261,7 +262,7 @@ MonoBehaviour:
   mirrorTooltip: {fileID: 0}
   laserTooltip: {fileID: 0}
   panel: {fileID: 0}
-  cam: {fileID: 0}
+  cam: {fileID: 20126264962296778}
   button: {fileID: 0}
   green: {fileID: 2100000, guid: fd0a6d9597a63894c9416f7a2188dea9, type: 2}
   red: {fileID: 2100000, guid: 50fc652c03374464a9cc534a5e7467e1, type: 2}
@@ -293,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   global: {fileID: 0}
---- !u!114 &114846508665216430
+--- !u!114 &114367496452573852
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -301,10 +302,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 1012148467375610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c95808d87163c745b2b6c9f917e5a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 6cbef73835b7b0142b326a3fca12f6ab, type: 2}
+  renderMode: 0
+  multiplier: 1.5
+  SSAA_X2:
+    multiplier: 1.5
+    useFilter: 1
+    filterType: 1
+    sharpness: 0.8
+    sampleDistance: 0.5
+  SSAA_X4:
+    multiplier: 2
+    useFilter: 1
+    filterType: 2
+    sharpness: 0.725
+    sampleDistance: 0.95
+  SSAA_HALF:
+    multiplier: 0.5
+    useFilter: 1
+    filterType: 0
+    sharpness: 0
+    sampleDistance: 0
+  ssaaMode: 2
+  useShader: 1
+  filterType: 1
+  sharpness: 0.8
+  sampleDistance: 0.5
+  currentCamera: {fileID: 0}
+  mouseCompatibilityMode: 0
+  screenshtSettings:
+    takeScreenshot: 0
+    screenshotMultiplier: 1
+    screenshotPath: Assets/SuperSampledSceenshots/
+    namePrefix: GameName
+    outputResolution: {x: 1920, y: 1080}
+    useFilter: 1
+    sharpness: 0.85
 --- !u!114 &114966493906424420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,6 +364,185 @@ MonoBehaviour:
   red: {fileID: 0}
   fireLight: {fileID: 0}
   manager: {fileID: 0}
+--- !u!114 &114991953912267818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012148467375610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0247cc23c066a0549a9906c534207546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPrismPreset: {fileID: 11400000, guid: aa1f5918ba1c7ee4f9dd5ea45d0b78b0, type: 2}
+  currentlyInsideVolume: 0
+  enableGuaranteedMaterialOptimization: 0
+  autoTurnOffDepthTextures: 1
+  renderDepthDebug: 0
+  m_Material: {fileID: 0}
+  m_Shader: {fileID: 4800000, guid: 4cd270e10d4c090498ab18347d05fb18, type: 3}
+  m_Material2: {fileID: 0}
+  m_Shader2: {fileID: 4800000, guid: d2e7a63d7748a344db01814c761262ee, type: 3}
+  m_AOMaterial: {fileID: 0}
+  m_AOShader: {fileID: 4800000, guid: 908dab8ab0848bf4dade31fd80140c70, type: 3}
+  m_Material3: {fileID: 0}
+  m_Shader3: {fileID: 4800000, guid: f4b3ce83c812df64e8548d5697a460ed, type: 3}
+  m_DoFMaterial: {fileID: 0}
+  m_DoFShader: {fileID: 4800000, guid: 34790ad658f0df5438c038801eaf340c, type: 3}
+  m_FlaresMaterial: {fileID: 0}
+  m_FlaresShader: {fileID: 4800000, guid: 56b820a2a0d2295438127d32d0ac63c7, type: 3}
+  doBigPass: 1
+  useSeparableBlur: 1
+  lensDirtTexture: {fileID: 2800000, guid: 9337bbb7e51e1114fb460d8ea3a59af0, type: 3}
+  useLensDirt: 0
+  useBloom: 1
+  useBloomFlares: 0
+  bloomUseScreenBlend: 0
+  bloomType: 1
+  useDifferentMobileBloom: 0
+  bloomThreshType: 2
+  debugBloomTex: 0
+  bloomDownsampleEnum: 2
+  bloomDownsample: 2
+  bloomBlurPasses: 2
+  bloomIntensity: 2
+  bloomOneIntensity: 0.15
+  bloomTwoIntensity: 0.15
+  bloomThreeIntensity: 0.15
+  bloomFourIntensity: 0.15
+  bloomThreshold: 1.1
+  bloomRadius: 4
+  bloomKnee: 0.5
+  dirtIntensity: 0.3
+  useBloomStability: 1
+  bloomFlareRadialColorTex: {fileID: 2800000, guid: 7fbdc23b3e999624d95195ab44bf4470,
+    type: 3}
+  bloomFlareStarburstTex: {fileID: 2800000, guid: 8c404711bb9951e4499be728c11b3f26,
+    type: 3}
+  bloomFlareStrength: 1.9
+  bloomFlareHaloWidth: 0.5
+  bloomFlareGhostDispersal: 0.11
+  bloomFlareChromaticDistortion: 1.03
+  bloomFlareLensDirtIntensityMultiplier: 1
+  bloomFlareNumberGhosts: 6
+  bloomFlareRadius1: 0
+  bloomFlareRadius2: 0
+  bloomFlareRadius3: 0
+  useUIBlur: 0
+  uiBlurGrabTextureFromPassNumber: 2
+  useVignette: 1
+  vignetteStart: 0.9
+  vignetteEnd: 0.458
+  vignetteStrength: 0.438
+  vignetteColor: {r: 0, g: 0, b: 0, a: 1}
+  useNoise: 1
+  useDither: 0
+  noiseTexture: {fileID: 2800000, guid: d20b7c940c173cb45aae1d81e777429b, type: 3}
+  noiseIntensity: 0.2
+  secondaryNoiseMultiplier: 0.01
+  useChromaticAberration: 0
+  aberrationType: 1
+  chromaticDistanceOne: 0.29
+  chromaticDistanceTwo: 0.599
+  chromaticIntensity: 0.03
+  chromaticBlurWidth: 1
+  useChromaticBlur: 0
+  useTonemap: 0
+  tonemapType: 1
+  toneValues: {x: -1, y: 2.72, z: 0.15}
+  secondaryToneValues: {x: 0.59, y: 0.14, z: 0.14}
+  useBrightness: 0
+  brightIntensity: 0.5
+  brightCutoff: 0.2
+  brightSoftness: 0.1
+  useExposure: 0
+  debugViewExposure: 0
+  exposureMiddleGrey: 0.12
+  exposureLowerLimit: -6
+  exposureUpperLimit: 6
+  exposureSpeed: 6
+  histWidth: 1
+  histHeight: 1
+  useGammaCorrection: 0
+  gammaValue: 1
+  useDof: 0
+  dofForceEnableMedian: 0
+  useNearDofBlur: 0
+  useFullScreenBlur: 0
+  dofNearFocusPoint: 5
+  dofNearFocusDistance: 15
+  dofFocusPoint: 5
+  dofFocusDistance: 15
+  dofDownsample: 2
+  dofUseMRT: 0
+  dofRadius: 0.6
+  dofBokehFactor: 60
+  dofSampleAmount: 1
+  useDICEDof: 0
+  dofShapeWeight: 0.57735026
+  dofBlurSkybox: 1
+  debugDofPass: 0
+  dofDebugType: 4
+  dofFocusTransform: {fileID: 0}
+  useLut: 0
+  twoDLookupTex: {fileID: 0}
+  threeDLookupTex: {fileID: 0}
+  basedOnTempTex: 
+  lutLerpAmount: 0.6
+  useSecondLut: 0
+  secondaryTwoDLookupTex: {fileID: 0}
+  secondaryThreeDLookupTex: {fileID: 0}
+  secondaryBasedOnTempTex: 
+  secondaryLutLerpAmount: 0
+  useColorify: 1
+  colorifyAmount: 0.4
+  useSharpen: 1
+  sharpenAmount: 0.65
+  useFog: 1
+  fogAffectSkybox: 0
+  fogHeight: 50
+  fogIntensity: 0
+  fogStartPoint: 50
+  fogDistance: 170
+  fogColor: {r: 1, g: 1, b: 1, a: 1}
+  fogMidColor: {r: 1, g: 1, b: 1, a: 1}
+  fogEndColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  fogMidPoint: 200
+  fogEndPoint: 250
+  fogNoiseFactor1: 0.1
+  fogNoiseFactor2: 0.5
+  fogExpFactor: 2
+  useAmbientObscurance: 0
+  aoSampleCount: 3
+  useAODistanceCutoff: 0
+  aoDistanceCutoffLength: 50
+  aoDistanceCutoffStart: 500
+  aoIntensity: 0.7
+  aoContrast: 0.6
+  aoMinIntensity: 0
+  aoRadius: 1
+  aoDownsample: 0
+  aoBlurType: 3
+  aoBlurIterations: 1
+  aoBias: 0.1
+  aoBlurFilterDistance: 1.25
+  aoLightingContribution: 0.01
+  aoShowDebug: 0
+  useRays: 0
+  rayTransform: {fileID: 0}
+  rayWeight: 0.58767
+  rayDecay: 0.96815
+  rayExposure: 0.2
+  rayDensity: 0.926
+  rayColor: {r: 1, g: 1, b: 1, a: 1}
+  rayThreshold: {r: 0.87, g: 0.74, b: 0.65, a: 1}
+  rayDownsample: 4
+  raysShowDebug: 0
+  occlusionSource: 1
+  advancedVignette: 0
+  advancedAO: 0
+  advancedDof: 0
 --- !u!124 &124287184089800518
 Behaviour:
   m_ObjectHideFlags: 1
