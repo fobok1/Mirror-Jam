@@ -54,13 +54,13 @@ MonoBehaviour:
   clips:
   - name: Laser
     sound: {fileID: 8300000, guid: bcd4fce7231c7ab42810189308767e9d, type: 3}
-    volume: 0.5
+    volume: 0.256
     pitch: 0.696
     loop: 1
     source: {fileID: 0}
   - name: Creak
     sound: {fileID: 8300000, guid: 043185e01f7384345966b43696375cc8, type: 3}
-    volume: 0.5
+    volume: 0.96
     pitch: 0.696
     loop: 0
     source: {fileID: 0}
