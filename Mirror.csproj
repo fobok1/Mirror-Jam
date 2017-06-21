@@ -229,6 +229,7 @@
     <Compile Include="Assets\_myAssets\Scripts\PlayerMotor.cs" />
     <Compile Include="Assets\_myAssets\Scripts\RaycastReflection2.cs" />
     <Compile Include="Assets\_myAssets\Scripts\RotateMirror.cs" />
+    <Compile Include="Assets\_myAssets\Scripts\SettingsDetect.cs" />
     <Compile Include="Assets\_myAssets\Scripts\SliderAwake.cs" />
     <Compile Include="Assets\_myAssets\Scripts\raycastMirror.cs" />
   </ItemGroup>

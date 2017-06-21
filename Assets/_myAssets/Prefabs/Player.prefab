@@ -25,6 +25,9 @@ GameObject:
   - component: {fileID: 81821602476202656}
   - component: {fileID: 114367496452573852}
   - component: {fileID: 114991953912267818}
+  - component: {fileID: 114681107825386690}
+  - component: {fileID: 114659861559727370}
+  - component: {fileID: 114094971956673674}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -91,8 +94,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149705352306206}
-  m_LocalRotation: {x: 0, y: 0.98408735, z: -0, w: -0.17768589}
-  m_LocalPosition: {x: 25.93, y: 1.3, z: 4.16}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -3.617, y: 1.25, z: -1.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4682138201272118}
@@ -268,6 +271,17 @@ MonoBehaviour:
   red: {fileID: 2100000, guid: 50fc652c03374464a9cc534a5e7467e1, type: 2}
   fireLight: {fileID: 0}
   manager: {fileID: 0}
+--- !u!114 &114094971956673674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012148467375610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b77eb088bbd26ed43a5c26ad1693155e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114288232981377080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -340,6 +354,77 @@ MonoBehaviour:
     outputResolution: {x: 1920, y: 1080}
     useFilter: 1
     sharpness: 0.85
+--- !u!114 &114659861559727370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012148467375610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 390397f02bff7644ab045efd81d0d720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QualityLevel: 1
+  QualitySteps: 1
+  MotionScale: 3
+  CameraMotionMult: 1
+  MinVelocity: 1
+  MaxVelocity: 10
+  DepthThreshold: 0.01
+  Noise: 0
+  OverlayCameras: []
+  CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  AutoRegisterObjs: 1
+  MinResetDeltaDist: 1000
+  ResetFrameDelay: 1
+  WorkerThreads: 0
+  SystemThreadPool: 0
+  ForceCPUOnly: 0
+  DebugMode: 0
+--- !u!114 &114681107825386690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012148467375610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd14c7abcfeeeee4684c917d077a7e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noiseTex: {fileID: 0}
+  quadMesh: {fileID: 0}
+  hbaoShader: {fileID: 4800000, guid: 7b834eafaedd0d842bb05a969d9d14bd, type: 3}
+  m_Presets:
+    preset: 2
+  m_GeneralSettings:
+    integrationStage: 0
+    quality: 2
+    deinterleaving: 0
+    resolution: 0
+    noiseType: 1
+    displayMode: 0
+  m_AOSettings:
+    radius: 0.8
+    maxRadiusPixels: 128
+    bias: 0.05
+    intensity: 1
+    luminanceInfluence: 0
+    maxDistance: 150
+    distanceFalloff: 50
+    perPixelNormals: 1
+    baseColor: {r: 0, g: 0, b: 0, a: 1}
+  m_ColorBleedingSettings:
+    enabled: 0
+    saturation: 1
+    albedoMultiplier: 4
+  m_BlurSettings:
+    amount: 2
+    sharpness: 8
+    downsample: 0
 --- !u!114 &114966493906424420
 MonoBehaviour:
   m_ObjectHideFlags: 1
