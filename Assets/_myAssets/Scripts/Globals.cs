@@ -10,7 +10,7 @@ public class Globals : MonoBehaviour {
 
 	#region Variables
 	[HideInInspector]
-	public float lookSensitivity = 7f;
+	public float lookSensitivity = 6f;
 	
 	#endregion
 
