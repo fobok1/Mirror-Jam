@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 114065785530783342}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,6 +271,10 @@ MonoBehaviour:
   red: {fileID: 2100000, guid: 50fc652c03374464a9cc534a5e7467e1, type: 2}
   fireLight: {fileID: 0}
   manager: {fileID: 0}
+  charge: {fileID: 0}
+  spot: {fileID: 0}
+  lightSphere: {fileID: 0}
+  console: {fileID: 0}
 --- !u!114 &114094971956673674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -449,6 +453,10 @@ MonoBehaviour:
   red: {fileID: 0}
   fireLight: {fileID: 0}
   manager: {fileID: 0}
+  charge: {fileID: 0}
+  spot: {fileID: 0}
+  lightSphere: {fileID: 0}
+  console: {fileID: 0}
 --- !u!114 &114991953912267818
 MonoBehaviour:
   m_ObjectHideFlags: 1

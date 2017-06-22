@@ -20,9 +20,9 @@ public class GameMaster : MonoBehaviour {
 	private GameObject menuPanel;
 	private bool hasWon;
 	public TMPro.TMP_Text wall;
-	public TMPro.TMP_Text mirror;
-	public TMPro.TMP_Text laser;
-	public GameObject panel;
+	//public TMPro.TMP_Text mirror;
+	//public TMPro.TMP_Text laser;
+	//public GameObject panel;
 	#endregion
 
 	#region Methods
@@ -94,6 +94,10 @@ public class GameMaster : MonoBehaviour {
 		else if (_tag == "Field")
 		{
 			wall.text = "The laser hit a force field!";
+		}
+		else if (_tag == "Player")
+		{
+			wall.text = "The laser hit you!";
 		}
 		else 
 		{
