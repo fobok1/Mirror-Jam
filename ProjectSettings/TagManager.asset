@@ -9,6 +9,10 @@ TagManager:
   - Laser
   - laserTooltip
   - MirrorTooltip
+  - Power Switch
+  - Switch
+  - Wall
+  - Field
   layers:
   - Default
   - TransparentFX

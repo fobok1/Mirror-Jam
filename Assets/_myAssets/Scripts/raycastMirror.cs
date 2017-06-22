@@ -5,6 +5,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class raycastMirror : MonoBehaviour {
 
@@ -23,6 +24,10 @@ public class raycastMirror : MonoBehaviour {
 	public Material red;
 	public GameObject fireLight;
 	public AudioManager manager;
+	public Slider charge;
+	public Light spot;
+	public SphereCollider lightSphere;
+	public MeshRenderer console;
 	#endregion
 
 	#region Start/Update Methods
@@ -94,6 +99,21 @@ public class raycastMirror : MonoBehaviour {
 							mirrorTooltip.SetActive(false);
 							laserTooltip.SetActive(true);
 						}
+					}
+					else if (hit.collider.tag == "Switch")
+					{
+						if (Input.GetButtonDown("Activate"))
+						{
+							charge.maxValue = 5;
+							charge.value = 5;
+							spot.enabled = false;
+							lightSphere.enabled = false;
+							Material[] _mats = console.materials;
+							_mats[1] = green;
+							console.materials = _mats;
+						}
+						Debug.Log("Switch!");
+
 					}
 					else
 					{

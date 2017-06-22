@@ -19,6 +19,10 @@ public class GameMaster : MonoBehaviour {
 	[SerializeField]
 	private GameObject menuPanel;
 	private bool hasWon;
+	public TMPro.TMP_Text wall;
+	public TMPro.TMP_Text mirror;
+	public TMPro.TMP_Text laser;
+	public GameObject panel;
 	#endregion
 
 	#region Methods
@@ -45,6 +49,9 @@ public class GameMaster : MonoBehaviour {
 		}
 		else
 		{
+			StartCoroutine(HitAWall(tag));
+			
+
 			if (!laserScript.hasFired)
 			{
 				charge.value--;
@@ -72,5 +79,37 @@ public class GameMaster : MonoBehaviour {
 			Cursor.lockState = CursorLockMode.None;
 		}
 	}
+
+	IEnumerator HitAWall(string _tag)
+	{
+		raycastMirror ray = FindObjectOfType<raycastMirror>();
+		if (_tag == "Wall")
+		{
+			wall.text = "The laser hit a wall!";
+		}
+		else if (_tag == "MirrorTooltip")
+		{
+			wall.text = "The laser hit the side or back of a mirror!";
+		}
+		else if (_tag == "Field")
+		{
+			wall.text = "The laser hit a force field!";
+		}
+		else 
+		{
+			wall.text = "The laser hit itself!";
+		}
+
+		wall.gameObject.SetActive(true);
+
+
+		//mirror.gameObject.SetActive(false);
+		//laser.gameObject.SetActive(false);
+		//panel.SetActive(true);
+		yield return new WaitForSeconds(ray.laserTime);
+		wall.gameObject.SetActive(false);
+		//panel.SetActive(false);
+	}
+
 	#endregion
 }
