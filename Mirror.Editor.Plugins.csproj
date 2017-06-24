@@ -15,7 +15,7 @@
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>EditorPlugins:7</UnityProjectType>
-    <UnityBuildTarget>StandaloneLinux:17</UnityBuildTarget>
+    <UnityBuildTarget>StandaloneLinuxUniversal:25</UnityBuildTarget>
     <UnityVersion>5.6.1p2</UnityVersion>
     <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
