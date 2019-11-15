@@ -1,0 +1,17 @@
+1.1
+--------------
+* Fixed terrain being missing in demo scene
+* Fixed screenshot stretching when screenshot aspect ratio was different from screen aspect ratio
+* Fixed viewport resizing causing to break the image aspect ratio
+* Added own implementation of ScreenPointToRay to fix raycasting offset at image resolutions different than screen resolution
+* Added OnClick() compatibility mode (at cost of lower overall performance)
+* Minor changes to the Editor UI
+
+
+--------------
+OLDER VERSIONS
+--------------
+
+1.0
+--------------
+* Initial release
